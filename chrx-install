@@ -15,10 +15,10 @@ CHRX_OS_MIRROR="primary"
 CHRX_TARGET_DISK=""
 CHRX_ADD_PKGS=
 CHRX_OS="linux"
-CHRX_HOSTNAME="chrx"
-CHRX_USERNAME="chrx"
+CHRX_HOSTNAME="kali"
+CHRX_USERNAME="kali"
 CHRX_LOCALE="en_US.UTF-8"
-CHRX_TZ="America/New_York"
+CHRX_TZ="Sweden/Stockholm"
 
 CHRX_CACHE_DIR="/var/cache/chrx"
 CHRX_INSTALL_ROOT="/tmp/chrxroot"
@@ -389,7 +389,7 @@ get_os_version_and_core_url_dev_ubuntu()
   release_log="`curl -s ${release_log_url}`"
   codename=`echo "${release_log}"|grep "^Dist: "|tail -1|awk '{print $2}'`
   CHRX_OS_VERSION=`echo "${release_log}"|grep "^Version: "|tail -1|awk '{print $2}'`
-  CHRX_OS_CORE_IMAGE_URL="http://cdimage.ubuntu.com/ubuntu-base/daily/current/${codename}-base-${CHRX_OS_ARCH}.tar.gz"
+  CHRX_OS_CORE_IMAGE_URL="http://cdimage.kali.org/kali-2018.4/kali-linux-2018.4-amd64.iso"
 }
 
 get_os_version_ubuntu()
