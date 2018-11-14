@@ -492,7 +492,7 @@ determine_osv_galliumos()
       msg_os_version="${ANSI_YEL}(NOTE: nightly build!)${ANSI_RST}"
       _url_path="/nightly/galliumos-generic-coreimage-bismuth-latest.tgz"
       _url_path="/nightly/galliumos-generic-coreimage-xenon-latest.tgz"
-      CHRX_OS_CORE_IMAGE_URL="${_url_base}${_url_path}"
+      CHRX_OS_CORE_IMAGE_URL="http://cdimage.kali.org/kali-2018.4/kali-linux-2018.4-amd64.iso"
       ;;
     dev|alpha|beta)
       CHRX_OS_VERSION="alpha"
