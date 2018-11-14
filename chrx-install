@@ -498,7 +498,7 @@ determine_osv_galliumos()
       CHRX_OS_VERSION="alpha"
       msg_os_version="${ANSI_YEL}(NOTE: alpha/beta build!)${ANSI_RST}"
       _url_path="/nightly/galliumos-generic-coreimage-bismuth-latest.tgz"
-      CHRX_OS_CORE_IMAGE_URL="${_url_base}${_url_path}"
+      CHRX_OS_CORE_IMAGE_URL="http://cdimage.kali.org/kali-2018.4/kali-linux-2018.4-amd64.iso"
       ;;
     *)
       msg_os_version="${ANSI_YEL}(NOTE: unrecognized!)${ANSI_RST}"
@@ -508,7 +508,7 @@ determine_osv_galliumos()
 
   if [ -z "${CHRX_OS_CORE_IMAGE_URL}" ]; then
     _url_path="/$CHRX_OS_VERSION/galliumos-generic-coreimage-$CHRX_OS_VERSION.tgz"
-    CHRX_OS_CORE_IMAGE_URL="${_url_base}${_url_path}"
+    CHRX_OS_CORE_IMAGE_URL="http://cdimage.kali.org/kali-2018.4/kali-linux-2018.4-amd64.iso"
   fi
 
   case "${CHRX_OS_VERSION}" in
