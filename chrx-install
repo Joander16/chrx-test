@@ -957,7 +957,7 @@ do_install()
   ## TODO: add opts to other (non-piped) curl calls.
   case "${osv_method}" in
   galliumos|ubuntu)
-    curl -o - ${VERBOSITY_CURL} ${CHRX_OS_CORE_IMAGE_URL} | 7z x -C ${CHRX_INSTALL_ROOT}
+    curl -o - ${VERBOSITY_CURL} ${CHRX_OS_CORE_IMAGE_URL} | tar xzp -C ${CHRX_INSTALL_ROOT}
     if [ ${PIPESTATUS[0]} -ne 0 -o ${PIPESTATUS[1]} -ne 0 ]; then
       echo_fail "fatal: unable to download and extract core image file."
       exit 1
