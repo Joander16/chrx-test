@@ -21,7 +21,7 @@ echo "## $0 $@" > $CHRX_LOG_FILE
 ## need sudo -E to keep exported environment vars
 (
 export CHRX_WEB_ROOT CHRX_CACHE0_DIR
-curl -Os ${CHRX_WEB_ROOT}/chrx-install && sudo -E bash ./chrx-install "$@"
+curl -Os https://raw.githubusercontent.com/Joander16/chrx-test/master/chrx-install && sudo -E bash ./chrx-install "$@"
 ) 2>&1 | tee -a ${CHRX_LOG_FILE}
 
 ## logfile will be copied to chroot by install-chrx.
