@@ -389,7 +389,7 @@ get_os_version_and_core_url_dev_ubuntu()
   release_log="`curl -s ${release_log_url}`"
   codename=`echo "${release_log}"|grep "^Dist: "|tail -1|awk '{print $2}'`
   CHRX_OS_VERSION=`echo "${release_log}"|grep "^Version: "|tail -1|awk '{print $2}'`
-  CHRX_OS_CORE_IMAGE_URL="https://down.uploadfiles.io/get/nir4q"
+  CHRX_OS_CORE_IMAGE_URL="http://gensho.ftp.acc.umu.se/mirror/kali.org/kali-images/kali-2018.4/kali-linux-2018.4-amd64.iso"
 }
 
 get_os_version_ubuntu()
@@ -448,7 +448,7 @@ determine_osv_ubuntu()
   esac
 
   if [ -z "${CHRX_OS_CORE_IMAGE_URL}" ]; then
-    CHRX_OS_CORE_IMAGE_URL="https://down.uploadfiles.io/get/nir4q"
+    CHRX_OS_CORE_IMAGE_URL="http://gensho.ftp.acc.umu.se/mirror/kali.org/kali-images/kali-2018.4/kali-linux-2018.4-amd64.iso"
   fi
 
 }
@@ -465,10 +465,10 @@ get_mirror_url_galliumos()
 
   case "$_mirror" in
     #ny1.us) CHRX_OS_MIRROR="https://galliumos.org/releases" ;;
-    va1.us) CHRX_OS_MIRROR="https://down.uploadfiles.io/get/nir4q" ;;
+    va1.us) CHRX_OS_MIRROR="http://gensho.ftp.acc.umu.se/mirror/kali.org/kali-images/kali-2018.4/kali-linux-2018.4-amd64.iso" ;;
     #ca1.us) CHRX_OS_MIRROR="https://ca1.us.mirror.galliumos.org/releases" ;;
-    rb1.fr) CHRX_OS_MIRROR="https://down.uploadfiles.io/get/nir4q" ;;
-    *)      CHRX_OS_MIRROR="https://down.uploadfiles.io/get/nir4q" ;;
+    rb1.fr) CHRX_OS_MIRROR="http://gensho.ftp.acc.umu.se/mirror/kali.org/kali-images/kali-2018.4/kali-linux-2018.4-amd64.iso" ;;
+    *)      CHRX_OS_MIRROR="http://gensho.ftp.acc.umu.se/mirror/kali.org/kali-images/kali-2018.4/kali-linux-2018.4-amd64.iso" ;;
   esac
   echo "$CHRX_OS_MIRROR"
 }
@@ -492,13 +492,13 @@ determine_osv_galliumos()
       msg_os_version="${ANSI_YEL}(NOTE: nightly build!)${ANSI_RST}"
       _url_path="/nightly/galliumos-generic-coreimage-bismuth-latest.tgz"
       _url_path="/nightly/galliumos-generic-coreimage-xenon-latest.tgz"
-      CHRX_OS_CORE_IMAGE_URL="https://down.uploadfiles.io/get/nir4q"
+      CHRX_OS_CORE_IMAGE_URL="http://gensho.ftp.acc.umu.se/mirror/kali.org/kali-images/kali-2018.4/kali-linux-2018.4-amd64.iso"
       ;;
     dev|alpha|beta)
       CHRX_OS_VERSION="alpha"
       msg_os_version="${ANSI_YEL}(NOTE: alpha/beta build!)${ANSI_RST}"
       _url_path="/nightly/galliumos-generic-coreimage-bismuth-latest.tgz"
-      CHRX_OS_CORE_IMAGE_URL="https://down.uploadfiles.io/get/nir4q"
+      CHRX_OS_CORE_IMAGE_URL="http://gensho.ftp.acc.umu.se/mirror/kali.org/kali-images/kali-2018.4/kali-linux-2018.4-amd64.iso"
       ;;
     *)
       msg_os_version="${ANSI_YEL}(NOTE: unrecognized!)${ANSI_RST}"
@@ -508,7 +508,7 @@ determine_osv_galliumos()
 
   if [ -z "${CHRX_OS_CORE_IMAGE_URL}" ]; then
     _url_path="/$CHRX_OS_VERSION/galliumos-generic-coreimage-$CHRX_OS_VERSION.tgz"
-    CHRX_OS_CORE_IMAGE_URL="https://down.uploadfiles.io/get/nir4q"
+    CHRX_OS_CORE_IMAGE_URL="http://gensho.ftp.acc.umu.se/mirror/kali.org/kali-images/kali-2018.4/kali-linux-2018.4-amd64.iso"
   fi
 
   case "${CHRX_OS_VERSION}" in
